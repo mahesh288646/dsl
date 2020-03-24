@@ -7,13 +7,6 @@ import static com.xlson.groovycsv.CsvParser.parseCsv
 //def data_iterator = parseCsv(csv_content, separator: '=', readFirstLine: true)
 // println data_iterator.getClass()  // class com.xlson.groovycsv.CsvIterator
 //println data_interator[0] data_interator[1]
-def content = readFile '/var/lib/jenkins/workspace/SampleDSL3/data/environment.properties'
-
-Properties properties = new Properties()
-InputStream is = new ByteArrayInputStream(content.getBytes());
-properties.load(is)
-
-//def runtimeString = 'SERVICE_VERSION_MINOR'
-println properties."Env"
-//SERVICE_VERSION_MINOR = properties."$runtimeString"
-//echo SERVICE_VERSION_MINOR
+Properties props = new Properties()
+File propsFile = new File('/var/lib/jenkins/workspace/SampleDSL3/data/environment.properties')
+props.load(propsFile.newDataInputStream())
