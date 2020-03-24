@@ -11,11 +11,10 @@ Properties props = new Properties()
 File propsFile = new File('/var/lib/jenkins/workspace/SampleDSL3/data/environment.properties')
 props.load(propsFile.newDataInputStream())
 println props.getProperty('Env')
-
-multibranchPipelineJob('props.getProperty('AppName')') {
+def AppName = props.getProperty('AppName')
+multibranchPipelineJob('$AppName') {
     branchSources {
         git {
-
             def GitName = props.getProperty('AppName')
             id('12121212') // IMPORTANT: use a constant and unique identifier mahesh
             remote('https://github.com/mahesh288646/$GitName.git')
