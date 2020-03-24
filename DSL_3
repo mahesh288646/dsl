@@ -14,6 +14,6 @@ InputStream is = new ByteArrayInputStream(content.getBytes());
 properties.load(is)
 
 //def runtimeString = 'SERVICE_VERSION_MINOR'
-echo properties.Env
+println properties."Env"
 //SERVICE_VERSION_MINOR = properties."$runtimeString"
 //echo SERVICE_VERSION_MINOR
