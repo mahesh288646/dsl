@@ -12,14 +12,14 @@ File propsFile = new File('/var/lib/jenkins/workspace/SampleDSL3/data/environmen
 props.load(propsFile.newDataInputStream())
 println props.getProperty('Env')
 def AppName1 = props.getProperty('AppName')
-def GitName = props.getProperty('GitName')
+def GitName = "https://github.com/mahesh288646/SimpleMaven1.git
 //println $AppName1
 println props.getProperty('AppName')
 multibranchPipelineJob("$AppName1") {
     branchSources {
         git {
             id('12121212') // IMPORTANT: use a constant and unique identifier mahesh
-            remote('https://github.com/mahesh288646/"$GitName".git')
+            remote("$GitName")
             credentialsId('Git-ID')
 
         }
