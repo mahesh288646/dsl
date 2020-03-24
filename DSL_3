@@ -19,7 +19,7 @@ multibranchPipelineJob("$AppName1") {
         git {
             def GitName = props.getProperty('AppName')
             id('12121212') // IMPORTANT: use a constant and unique identifier mahesh
-            remote('https://github.com/mahesh288646/"$GitName.git"')
+            remote('https://github.com/mahesh288646/"$GitName".git')
             credentialsId('Git-ID')
 
         }
