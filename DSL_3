@@ -14,19 +14,19 @@ println props.getProperty('Env')
 def AppName = props.getProperty('AppName')
 //println $AppName
 println props.getProperty('AppName')
-//multibranchPipelineJob($AppName) {
-//    branchSources {
-//        git {
-//            def GitName = props.getProperty('AppName')
-//            id('12121212') // IMPORTANT: use a constant and unique identifier mahesh
-//            remote('https://github.com/mahesh288646/$GitName.git')
-//            credentialsId('Git-ID')
+multibranchPipelineJob("props.getProperty('AppName')") {
+    branchSources {
+        git {
+            //def GitName = props.getProperty('AppName')
+            id('12121212') // IMPORTANT: use a constant and unique identifier mahesh
+            remote('https://github.com/mahesh288646/SampleMaven1.git')
+            credentialsId('Git-ID')
 
-//        }
-//    }
-//    orphanedItemStrategy {
-//        discardOldItems {
-//            numToKeep(0)
-//        }
-//    }
-//}
+        }
+    }
+    orphanedItemStrategy {
+        discardOldItems {
+            numToKeep(0)
+        }
+    }
+}
