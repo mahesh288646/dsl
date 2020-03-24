@@ -13,6 +13,7 @@ props.load(propsFile.newDataInputStream())
 println props.getProperty('Env')
 def AppName = props.getProperty('AppName')
 println $AppName
+println props.getProperty('AppName')
 //multibranchPipelineJob($AppName) {
 //    branchSources {
 //        git {
