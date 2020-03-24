@@ -14,7 +14,7 @@ println props.getProperty('Env')
 def AppName1 = props.getProperty('AppName')
 //println $AppName1
 println props.getProperty('AppName')
-multibranchPipelineJob($AppName1) {
+multibranchPipelineJob('$AppName1') {
     branchSources {
         git {
             def GitName = props.getProperty('AppName')
