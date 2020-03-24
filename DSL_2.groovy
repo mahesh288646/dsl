@@ -14,6 +14,6 @@ multibranchPipelineJob('example') {
     }
 }
 
-buildPipelineView('example') {
-    triggerOnlyLatestJob()
-}
+//buildPipelineView('example') {
+//    triggerOnlyLatestJob()
+//}
