@@ -30,3 +30,8 @@ multibranchPipelineJob("$AppName1") {
         }
     }
 }
+
+trigger("$AppName1")
+{
+triggerWithNoParameters(boolean triggerWithNoParameters = true)
+}

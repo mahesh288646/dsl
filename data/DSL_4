@@ -1,0 +1,7 @@
+job('Deployment') {
+    steps {
+        //println("Mahesh Babu")
+        shell "echo Maheshhhhhhhhh"
+        shell "sed -i "%s/xyz/abc" /var/lib/jenkins/workspace/SampleDSL3/Jenkinsfile"
+    }
+}
