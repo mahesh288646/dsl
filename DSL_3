@@ -1,19 +1,10 @@
-@Grab('com.xlson.groovycsv:groovycsv:1.3')
-import static com.xlson.groovycsv.CsvParser.parseCsv
- 
-//fh = new File('/var/lib/jenkins/workspace/SampleDSL3/data/convertcsv.csv')
-//def csv_content = fh.getText('utf-8')
- 
-//def data_iterator = parseCsv(csv_content, separator: '=', readFirstLine: true)
-// println data_iterator.getClass()  // class com.xlson.groovycsv.CsvIterator
-//println data_interator[0] data_interator[1]
+import DSL_4
 Properties props = new Properties()
 File propsFile = new File('/var/lib/jenkins/workspace/SampleDSL3/data/environment.properties')
 props.load(propsFile.newDataInputStream())
 println props.getProperty('Env')
 def AppName1 = props.getProperty('AppName')
 def GitName = "https://github.com/mahesh288646/SimpleMaven1.git"
-//println $AppName1
 println props.getProperty('AppName')
 multibranchPipelineJob("$AppName1") {
     branchSources {
@@ -31,7 +22,7 @@ multibranchPipelineJob("$AppName1") {
     }
 }
 
-trigger("Deployment")
-{
-triggerWithNoParameters(true)
-}
+//trigger("Deployment")
+//{
+//triggerWithNoParameters(true)
+//}
