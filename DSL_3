@@ -1,4 +1,4 @@
-import DSL_4
+import data.DSL_4
 Properties props = new Properties()
 File propsFile = new File('/var/lib/jenkins/workspace/SampleDSL3/data/environment.properties')
 props.load(propsFile.newDataInputStream())
