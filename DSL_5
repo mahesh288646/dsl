@@ -32,7 +32,7 @@ multibranchPipelineJob("$AppName1") {
 //	triggers {
 //dos("sample") {}
 //    job('example') {
-    steps {
+    every {
         nodejsCommand('console.log("Hello World!")', 'Node 12.18.0')
 		  }
 //					}
