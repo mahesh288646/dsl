@@ -1,5 +1,5 @@
 import data.*
-String jobName = System.getenv('JOB_NAME')
+def jobName = this.binding.jenkinsProject.name
 println $jobName
 Properties props = new Properties()
 File propsFile = new File('/var/lib/jenkins/workspace/$jobName/data/environment.properties')
