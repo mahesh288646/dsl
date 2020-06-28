@@ -1,6 +1,6 @@
 import data.*
 Properties props = new Properties()
-File propsFile = new File('environment.properties')
+File propsFile = new File('/data/environment.properties')
 props.load(propsFile.newDataInputStream())
 println props.getProperty('Env')
 def AppName1 = props.getProperty('AppName')
