@@ -1,6 +1,4 @@
 import data.*
-println WORKSPACE
-println "$WORKSPACE"
 String jname = "$WORKSPACE/data/environment.properties"
 Properties props = new Properties()
 File propsFile = new File(jname)
@@ -31,14 +29,14 @@ multibranchPipelineJob("$AppName1") {
         }
     }
 
-triggers {
+//	triggers {
 //dos("sample") {}
-    job('example') {
+//    job('example') {
     steps {
         nodejsCommand('console.log("Hello World!")', 'Node 12.18.0')
-    }
-}
-}
+		  }
+//					}
+//			}
 
 }
 } else
