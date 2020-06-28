@@ -31,11 +31,11 @@ multibranchPipelineJob("$AppName1") {
 
 	triggers {
 //dos("sample") {}
-job('example') {
+//job('example') {
     steps {
         nodejsCommand('console.log("Hello World!")', 'Node 0.12.0')
 		  }
-				}
+//				}
 			}
 
 }
