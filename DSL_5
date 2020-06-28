@@ -33,7 +33,7 @@ multibranchPipelineJob("$AppName1") {
 //dos("sample") {}
 //    job('example') {
     every {
-        nodejsCommand('console.log("Hello World!")', 'Node 12.18.0')
+        nodejsCommand("console.log("Hello World!")", "Node 12.18.0")
 		  }
 //					}
 //			}
