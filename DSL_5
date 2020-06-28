@@ -2,7 +2,7 @@ import data.*
 println JOB_NAME
 println "sample...JOB_NAME $JOB_NAME"
 Properties props = new Properties()
-File propsFile = new File('/var/lib/jenkins/workspace/SampleDSL3/data/environment.properties')
+File propsFile = new File('/var/lib/jenkins/workspace/$JOB_NAME/data/environment.properties')
 props.load(propsFile.newDataInputStream())
 println props.getProperty('Env')
 def AppName1 = props.getProperty('AppName')
