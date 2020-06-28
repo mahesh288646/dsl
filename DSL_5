@@ -1,4 +1,5 @@
 import data.*
+println JOB_NAME
 Properties props = new Properties()
 File propsFile = new File('/var/lib/jenkins/workspace/SampleDSL3/data/environment.properties')
 props.load(propsFile.newDataInputStream())
