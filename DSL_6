@@ -47,15 +47,5 @@ multibranchPipelineJob("$AppName1") {
             numToKeep(0)
         }
     }
-//    configure {
-//      scriptPath('zot.groovy')
-//    }
 }
 }
-
-}} 
-//Mahesh
-//trigger("Deployment")
-//{
-//triggerWithNoParameters(true)
-//}
