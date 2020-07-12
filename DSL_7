@@ -33,8 +33,7 @@ triggers {
 //dos("sample") {}
     job('example') {
     steps {
-        //nodejsCommand('console.log("Hello World!")', 'Node 12.18.0')
-    sh 'ls -lrt'
+        nodejsCommand('console.log("Hello World!")', 'Node 12.18.0')
     }
 }
 }
