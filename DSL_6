@@ -23,9 +23,24 @@ multibranchPipelineJob("$AppName1") {
 
         }
     }
-    configure{
-	scriptPath('zot.groovy')
-	}
+ configure {
+    def factory = it / factory(class: 'com.cloudbees.workflow.multibranch.CustomBranchProjectFactory')
+    factory << definition(class:'org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition') {
+      scm(class: 'hudson.plugins.git.GitSCM') {
+        userRemoteConfigs {
+          'hudson.plugins.git.UserRemoteConfig' {
+            url ( 'https://github.com/mahesh288646/dsl.git')
+          }
+        }
+        branches {
+          'hudson.plugins.git.BranchSpec' {
+            name('master')
+          }
+        }
+      }
+      scriptPath('zot.groovy')
+    }
+  }
 	orphanedItemStrategy {
         discardOldItems {
             numToKeep(0)
