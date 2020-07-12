@@ -28,12 +28,6 @@ multibranchPipelineJob("$AppName1") {
             numToKeep(0)
         }
     }
-//    configure {
-//      scriptPath('zot.groovy')
-//    }
-}
-}
-
 }
 } else
 if ($AppType==Angular)
