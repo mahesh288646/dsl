@@ -28,16 +28,8 @@ multibranchPipelineJob("$AppName1") {
             numToKeep(0)
         }
     }
-    configure {
-      scriptPath('zot.groovy')
-    }
-//triggers {
-//dos("sample") {}
-//    job('example') {
-//    steps {
-        //nodejsCommand('console.log("Hello World!")', 'Node 12.18.0')
-   // sh 'ls -lrt'
-//shell('ls -lrt')
+//    configure {
+//      scriptPath('zot.groovy')
 //    }
 }
 }
