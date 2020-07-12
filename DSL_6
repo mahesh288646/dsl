@@ -28,15 +28,32 @@ multibranchPipelineJob("$AppName1") {
             numToKeep(0)
         }
     }
-
-triggers {
+  configure {
+    def factory = it / factory(class: 'com.cloudbees.workflow.multibranch.CustomBranchProjectFactory')
+    factory << definition(class:'org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition') {
+      scm(class: 'hudson.plugins.git.GitSCM') {
+        userRemoteConfigs {
+          'hudson.plugins.git.UserRemoteConfig' {
+            url ( 'https://git.host/pipelines.git')
+          }
+        }
+        branches {
+          'hudson.plugins.git.BranchSpec' {
+            name('master')
+          }
+        }
+      }
+      scriptPath('zot.groovy')
+    }
+  }
+//triggers {
 //dos("sample") {}
-    job('example') {
-    steps {
+//    job('example') {
+//    steps {
         //nodejsCommand('console.log("Hello World!")', 'Node 12.18.0')
    // sh 'ls -lrt'
-shell('ls -lrt')
-    }
+//shell('ls -lrt')
+//    }
 }
 }
 
