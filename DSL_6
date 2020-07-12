@@ -23,7 +23,10 @@ multibranchPipelineJob("$AppName1") {
 
         }
     }
-    orphanedItemStrategy {
+    configure{
+	scriptPath('zot.groovy')
+	}
+	orphanedItemStrategy {
         discardOldItems {
             numToKeep(0)
         }
