@@ -42,7 +42,7 @@ println("This is Angular space")
 multibranchPipelineJob("$AppName1") {
     branchSources {
         git {
-            id('12121212') // IMPORTANT: use a constant and unique identifier mahesh
+            id('12121213') // IMPORTANT: use a constant and unique identifier mahesh
             remote("$GitName")
             credentialsId('Git-ID')
 
@@ -53,8 +53,13 @@ multibranchPipelineJob("$AppName1") {
             numToKeep(0)
         }
     }
+//    configure {
+//      scriptPath('zot.groovy')
+//    }
 }
-} 
+}
+
+}} 
 //Mahesh
 //trigger("Deployment")
 //{
