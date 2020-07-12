@@ -28,7 +28,7 @@ multibranchPipelineJob("$AppName1") {
             numToKeep(0)
         }
     }
-  configure {
+    configure {
       scriptPath('zot.groovy')
     }
 //triggers {
