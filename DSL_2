@@ -1,19 +1,15 @@
-multibranchPipelineJob('example') {
-    branchSources {
+pipelineJob('job-dsl-plugin') {
+  definition {
+    cpsScm {
+      scm {
         git {
-            id('12121212') // IMPORTANT: use a constant and unique identifier mahesh
-            remote('https://github.com/mahesh288646/SampleMaven1.git')
-            credentialsId('Git-ID')
-
+          remote {
+            url('https://github.com/jenkinsci/job-dsl-plugin.git')
+          }
+          branch('*/master')
         }
+      }
+      lightweight()
     }
-    orphanedItemStrategy {
-        discardOldItems {
-            numToKeep(0)
-        }
-    }
-}
-
-buildPipelineView('example') {
-   triggerOnlyLatestJob(true)
+  }
 }
