@@ -10,7 +10,8 @@ def AppType = props.getProperty('AppType')
 def GitName = "https://github.com/mahesh288646/$GitNam"
 //def GitName = "https://github.com/mahesh288646/SimpleMaven1.git"
 println props.getProperty('AppName')
-
+print 'DEBUG: parameter Branch = ' + params.Branch
+print "DEBUG: parameter Branch = ${params.Branch}"
 if ('String $AppType==SpringBoot')
 {
 println("This is springboot space")
